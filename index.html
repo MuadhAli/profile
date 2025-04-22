@@ -13,6 +13,11 @@
         <div class="logo">
             <span>Tech</span>Trend
         </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
@@ -24,23 +29,60 @@
     </nav>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const navbar = document.querySelector('.navbar');
-        let lastScrollTop = 0;
-    
-        window.addEventListener('scroll', () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down
-                navbar.classList.add('hidden');
-            } else {
-                // Scrolling up
-                navbar.classList.remove('hidden');
-            }
-    
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll
+    const navbar = document.querySelector('.navbar');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    let lastScrollTop = 0;
+
+    // Toggle nav-links on hamburger click
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        hamburger.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            hamburger.classList.remove('active');
         });
     });
+
+    // Scroll behavior
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            navbar.classList.add('hidden');
+            if (navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+                hamburger.classList.remove('active');
+            }
+        } else {
+            // Scrolling up
+            navbar.classList.remove('hidden');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Hamburger animation
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        if (hamburger.classList.contains('active')) {
+            hamburger.style.transform = 'rotate(90deg)';
+            hamburger.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            hamburger.children[1].style.opacity = '0';
+            hamburger.children[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+        } else {
+            hamburger.style.transform = 'rotate(0)';
+            hamburger.children[0].style.transform = 'rotate(0)';
+            hamburger.children[1].style.opacity = '1';
+            hamburger.children[2].style.transform = 'rotate(0)';
+        }
+    });
+});
     </script>
 
 
