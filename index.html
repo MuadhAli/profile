@@ -10,38 +10,126 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">TechTrend</div>
+        <div class="logo">
+            <span>Tech</span>Trend
+        </div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
             <a href="#services">Services</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact Us</a>
+            <a href="#quote" class="quote-btn">Request a Quote</a>
         </div>
     </nav>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.querySelector('.navbar');
+        let lastScrollTop = 0;
+    
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                navbar.classList.add('hidden');
+            } else {
+                // Scrolling up
+                navbar.classList.remove('hidden');
+            }
+    
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll
+        });
+    });
+    </script>
+
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-text">
             <h1>Transforming Visions into Reality with Innovative Solutions</h1>
+            <p class="typewriter">We provide solutions: <span class="typewriter-text"></span></p>
         </div>
         <div class="hero-image">
             <img src="./images/test.jpeg" alt="Hero Image">
         </div>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const typewriterText = document.querySelector('.typewriter-text');
+    const services = [
+        'Web Application Development',
+        'Microsoft 365 Setup',
+        'Domain & Hosting Services',
+        'Maintenance & Support'
+    ];
+    let serviceIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let currentText = '';
+
+    function type() {
+        const currentService = services[serviceIndex];
+        
+        if (!isDeleting) {
+            // Typing
+            currentText = currentService.substring(0, charIndex + 1);
+            charIndex++;
+        } else {
+            // Deleting
+            currentText = currentService.substring(0, charIndex);
+            charIndex--;
+        }
+
+        typewriterText.textContent = currentText;
+
+        if (!isDeleting && charIndex === currentService.length) {
+            // Pause at end of typing
+            setTimeout(() => { isDeleting = true; }, 1000);
+        } else if (isDeleting && charIndex === 0) {
+            // Move to next service
+            isDeleting = false;
+            serviceIndex = (serviceIndex + 1) % services.length;
+        }
+
+        const typingSpeed = isDeleting ? 70 : 100;
+        setTimeout(type, typingSpeed);
+    }
+
+    // Start typewriter effect
+    setTimeout(type, 500);
+});
+    </script>
+
+
 
     <!-- About Us Section -->
     <section class="about" id="about">
         <div class="about-content">
             <div class="about-text">
-                <h2>About Us</h2>
-                <p>We are a forward-thinking technology company dedicated to delivering innovative solutions that drive business success. With a team of skilled professionals, we combine creativity and technical expertise to transform ideas into reality.</p>
+                <p class="heading-subtitle">Innovative IT & Web Development Solutions</p>
+                <h2 class="heading-title">Empowering Businesses with Cutting-Edge Technology</h2>
+                <div class="about-block">
+                    <p class="paragraph">In today’s fast-evolving digital landscape, businesses need robust and scalable IT solutions to stay competitive. Our expertise in custom software, web development, and cloud solutions ensures seamless digital transformation.</p>
+                    <p class="paragraph">We specialize in developing high-performance web applications, enterprise solutions, and AI-driven automation to enhance efficiency and drive business growth. How can we help your business thrive in the digital era?</p>
+                    <div class="signature-block">
+                        <a class="btn btn-secondary" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                        <div class="signature-body">
+                            <h6>Muadh Ali</h6>
+                            <p>Co-Founder</p>
+                            <img class="signature-img" src="./images/signature.png" alt="Signature">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="about-image">
-                <img src="./images/test.jpeg" alt="About Us">
+                <div class="about-img-holder">
+                    <img src="./images/about.png" alt="About Us">
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -77,6 +165,28 @@
                     <li>Domain Management</li>
                     <li>High-Speed Hosting</li>
                     <li>SSL Certificates</li>
+                </ul>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="service-card">
+                <img src="./images/service-icon4.svg" alt="Maintenance Icon" class="service-icon">
+                <h3>Maintenance & Support Services</h3>
+                <p>Ensure optimal performance with our maintenance, troubleshooting, and enhancement services. We keep your systems running smoothly with proactive support.</p>
+                <ul>
+                    <li>24/7 Support</li>
+                    <li>Regular Updates</li>
+                    <li>Performance Optimization</li>
+                </ul>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="service-card">
+                <img src="./images/service-icon4.svg" alt="Maintenance Icon" class="service-icon">
+                <h3>Maintenance & Support Services</h3>
+                <p>Ensure optimal performance with our maintenance, troubleshooting, and enhancement services. We keep your systems running smoothly with proactive support.</p>
+                <ul>
+                    <li>24/7 Support</li>
+                    <li>Regular Updates</li>
+                    <li>Performance Optimization</li>
                 </ul>
                 <a href="#">Explore More</a>
             </div>
@@ -213,30 +323,139 @@
 </script>
 
 
+
+
+
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <h2>Our Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="./images/test.jpeg" alt="Project 1">
-                <div class="project-overlay">
-                    <h3>Project One</h3>
+        <div class="projects-container">
+            <div class="projects-slider">
+                <div class="project-card">
+                    <img src="./images/1.png" alt="Wafa Enterprises">
+                    <h3>Wafa Enterprises</h3>
+                    <p>Experience a smarter way to save with us. Trusted by over 30,000 customers, your monthly contributions do more than build financial security - they open doors to extraordinary benefits.</p>
+                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="./images/test.jpeg" alt="Project 2">
-                <div class="project-overlay">
-                    <h3>Project Two</h3>
+                <div class="project-card">
+                    <img src="./images/2.jpg" alt="GD Gold And Diamond">
+                    <h3>GD Gold And Diamond</h3>
+                    <p>At GD GOLD AND DIAMONDS, we're dedicated to providing a trusted, high-quality experience for our clients. With ethically sourced, rigorously inspected gold, we ensure each piece meets the highest standards.</p>
+                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="./images/test.jpeg" alt="Project 3">
-                <div class="project-overlay">
-                    <h3>Project Three</h3>
+                <div class="project-card">
+                    <img src="./images/3.jpg" alt="PACE Conclave">
+                    <h3>PACE Conclave</h3>
+                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia, industry, and research per-sonnel through a series of events.</p>
+                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </div>
+                <div class="project-card">
+                    <img src="./images/4.jpg" alt="PACE Conclave">
+                    <h3>PACE Conclave</h3>
+                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia, industry, and research per-sonnel through a series of events.</p>
+                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <img src="./images/5.jpg" alt="PACE Conclave">
+                    <h3>PACE Conclave</h3>
+                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia, industry, and research per-sonnel through a series of events.</p>
+                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <img src="./images/6.jpg" alt="PACE Conclave">
+                    <h3>PACE Conclave</h3>
+                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia, industry, and research per-sonnel through a series of events.</p>
+                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>           
         </div>
     </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.projects-slider');
+    const cards = document.querySelectorAll('.project-card');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    let currentIndex = 0;
+    const cardWidth = cards[0].offsetWidth + 30; // Include margin
+    const totalCards = cards.length;
+    const visibleCards = 3; // Number of cards visible at once
+    const maxIndex = totalCards - visibleCards;
+
+    // Clone first and last cards for infinite loop effect
+    const firstClone = cards[0].cloneNode(true);
+    const lastClone = cards[totalCards - 1].cloneNode(true);
+    slider.appendChild(firstClone);
+    slider.insertBefore(lastClone, cards[0]);
+
+    // Update slider position
+    const updateSlider = () => {
+        slider.style.transition = 'transform 0.5s ease-in-out';
+        slider.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
+    };
+
+    // Move to next slide
+    const moveNext = () => {
+        if (currentIndex >= maxIndex) {
+            currentIndex = 0;
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${cardWidth}px)`;
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+                updateSlider();
+            }, 50);
+        } else {
+            currentIndex++;
+            updateSlider();
+        }
+    };
+
+    // Move to previous slide
+    const movePrev = () => {
+        if (currentIndex <= 0) {
+            currentIndex = maxIndex;
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${(maxIndex + 1) * cardWidth}px)`;
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+                updateSlider();
+            }, 50);
+        } else {
+            currentIndex--;
+            updateSlider();
+        }
+    };
+
+    // Auto-slide every 5 seconds
+    let autoSlide = setInterval(moveNext, 1000);
+
+    // Pause on hover
+    slider.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    slider.parentElement.addEventListener('mouseleave', () => autoSlide = setInterval(moveNext, 1000));
+
+    // Button controls
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            clearInterval(autoSlide);
+            movePrev();
+            autoSlide = setInterval(moveNext, 1000);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            clearInterval(autoSlide);
+            moveNext();
+            autoSlide = setInterval(moveNext, 1000);
+        });
+    }
+
+    // Initial position
+    slider.style.transform = `translateX(-${cardWidth}px)`;
+});
+</script>
+
+
+
 
     <!-- Footer -->
     <footer class="footer" id="contact">
@@ -255,13 +474,25 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p>Email: info@techtrend.com</p>
-                <p>Phone: +1 (123) 456-7890</p>
+                <p>Email: <a href="mailto:info@techtrend.com">info@techtrend.com</a></p>
+                <p>Phone: <a href="tel:+11234567890">+1 (123) 456-7890</a></p>
                 <p>Address: 123 Innovation Drive, Tech City</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>© 2025 TechTrend. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
         </div>
     </footer>
 </body>
