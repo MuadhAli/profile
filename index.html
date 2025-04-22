@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Corporate Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">TechTrend</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Transforming Visions into Reality with Innovative Solutions</h1>
+        </div>
+        <div class="hero-image">
+            <img src="./images/test.jpeg" alt="Hero Image">
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>We are a forward-thinking technology company dedicated to delivering innovative solutions that drive business success. With a team of skilled professionals, we combine creativity and technical expertise to transform ideas into reality.</p>
+            </div>
+            <div class="about-image">
+                <img src="./images/test.jpeg" alt="About Us">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="./images/service-icon1.svg" alt="Web Development Icon" class="service-icon">
+                <h3>Web Application Development</h3>
+                <p>We craft scalable, secure, and user-friendly web applications tailored to your business needs. Our solutions leverage the latest technologies to ensure performance and reliability.</p>
+                <ul>
+                    <li>Custom Web Solutions</li>
+                    <li>Responsive Design</li>
+                    <li>Secure Architecture</li>
+                </ul>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="service-card">
+                <img src="./images/service-icon2.svg" alt="M365 Setup Icon" class="service-icon">
+                <h3>Outlook & Microsoft M365 Setup</h3>
+                <p>Seamless setup and integration of Outlook and Microsoft 365 for efficient business communication. We optimize your workflow with professional configurations.</p>
+                <ul>
+                    <li>Email Setup</li>
+                    <li>Cloud Integration</li>
+                    <li>Training Support</li>
+                </ul>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="service-card">
+                <img src="./images/service-icon3.svg" alt="Domain Hosting Icon" class="service-icon">
+                <h3>Domain & Hosting Services</h3>
+                <p>Reliable domain registration and hosting solutions for secure, high-performance websites. We ensure uptime and robust security for your online presence.</p>
+                <ul>
+                    <li>Domain Management</li>
+                    <li>High-Speed Hosting</li>
+                    <li>SSL Certificates</li>
+                </ul>
+                <a href="#">Explore More</a>
+            </div>
+            <div class="service-card">
+                <img src="./images/service-icon4.svg" alt="Maintenance Icon" class="service-icon">
+                <h3>Maintenance & Support Services</h3>
+                <p>Ensure optimal performance with our maintenance, troubleshooting, and enhancement services. We keep your systems running smoothly with proactive support.</p>
+                <ul>
+                    <li>24/7 Support</li>
+                    <li>Regular Updates</li>
+                    <li>Performance Optimization</li>
+                </ul>
+                <a href="#">Explore More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- testimonial section  -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <img src="./images/client1.jpeg" alt="Client 1" class="client-image">
+                    <p>"TechTrend transformed our business with a custom web application that exceeded our expectations. Their expertise and dedication are unmatched."</p>
+                    <h3>Jane Doe</h3>
+                    <span>CEO, Innovate Corp</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./images/client2.jpeg" alt="Client 2" class="client-image">
+                    <p>"The Microsoft 365 setup by TechTrend streamlined our communication. Their support team is always responsive and professional."</p>
+                    <h3>John Smith</h3>
+                    <span>CTO, FutureTech</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./images/client3.jpeg" alt="Client 3" class="client-image">
+                    <p>"Reliable hosting and domain services from TechTrend ensured our website runs smoothly. Highly recommend their services!"</p>
+                    <h3>Emily Brown</h3>
+                    <span>Founder, GrowEasy</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./images/client4.jpeg" alt="Client 4" class="client-image">
+                    <p>"TechTrend's maintenance services keep our systems optimized. Their proactive approach saves us time and resources."</p>
+                    <h3>Michael Lee</h3>
+                    <span>Director, TechSolutions</span>
+                </div>
+            </div>
+            <button class="slider-prev">❮</button>
+            <button class="slider-next">❯</button>
+        </div>
+    </section>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.testimonials-slider');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    let currentIndex = 0;
+    const cardWidth = cards[0].offsetWidth + 30; // Include margin
+    const totalCards = cards.length;
+    const visibleCards = 3; // Number of cards visible at once
+    const maxIndex = totalCards - visibleCards;
+
+    // Clone first and last cards for infinite loop effect
+    const firstClone = cards[0].cloneNode(true);
+    const lastClone = cards[totalCards - 1].cloneNode(true);
+    slider.appendChild(firstClone);
+    slider.insertBefore(lastClone, cards[0]);
+
+    // Update slider position
+    const updateSlider = () => {
+        slider.style.transition = 'transform 0.5s ease-in-out';
+        slider.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
+    };
+
+    // Move to next slide
+    const moveNext = () => {
+        if (currentIndex >= maxIndex) {
+            currentIndex = 0;
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${cardWidth}px)`;
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+                updateSlider();
+            }, 50);
+        } else {
+            currentIndex++;
+            updateSlider();
+        }
+    };
+
+    // Move to previous slide
+    const movePrev = () => {
+        if (currentIndex <= 0) {
+            currentIndex = maxIndex;
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${(maxIndex + 1) * cardWidth}px)`;
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+                updateSlider();
+            }, 50);
+        } else {
+            currentIndex--;
+            updateSlider();
+        }
+    };
+
+    // Auto-slide every 5 seconds
+    let autoSlide = setInterval(moveNext, 5000);
+
+    // Pause on hover
+    slider.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    slider.parentElement.addEventListener('mouseleave', () => autoSlide = setInterval(moveNext, 5000));
+
+    // Button controls
+    nextBtn.addEventListener('click', () => {
+        clearInterval(autoSlide);
+        moveNext();
+        autoSlide = setInterval(moveNext, 5000);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        clearInterval(autoSlide);
+        movePrev();
+        autoSlide = setInterval(moveNext, 5000);
+    });
+
+    // Initial position
+    slider.style.transform = `translateX(-${cardWidth}px)`;
+});
+</script>
+
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>Our Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="./images/test.jpeg" alt="Project 1">
+                <div class="project-overlay">
+                    <h3>Project One</h3>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="./images/test.jpeg" alt="Project 2">
+                <div class="project-overlay">
+                    <h3>Project Two</h3>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="./images/test.jpeg" alt="Project 3">
+                <div class="project-overlay">
+                    <h3>Project Three</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechTrend</h3>
+                <p>Innovating the future, one solution at a time.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a><br>
+                <a href="#about">About Us</a><br>
+                <a href="#services">Services</a><br>
+                <a href="#projects">Projects</a><br>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@techtrend.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                <p>Address: 123 Innovation Drive, Tech City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 TechTrend. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
