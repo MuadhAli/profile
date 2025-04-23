@@ -28,25 +28,24 @@
         </div>
     </nav>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('.navbar');
+        document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    let lastScrollTop = 0;
 
-    // Toggle nav-links on hamburger click
+    // Toggle nav-links and hamburger animation on click
     hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
         hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
     });
 
     // Close mobile menu when clicking a link
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('show');
             hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
         });
     });
+    
 
     // Scroll behavior
     window.addEventListener('scroll', () => {
