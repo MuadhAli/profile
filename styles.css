@@ -1575,149 +1575,17 @@ body::before {
 
 
 
-/* @media (max-width: 768px) {
-    .navbar {
-        padding: 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .hero, .about-content {
-        flex-direction: column;
-        padding: 100px 20px;
-        text-align: center;
-    }
-
-    .hero-text, .about-text {
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .hero-image, .about-image {
-        max-width: 80%;
-    }
-
-    .services {
-        padding: 80px 20px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-}
 
 
 
 
-****
-@media (max-width: 768px) {
-    .navbar {
-        padding: 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
 
-    .hero, .about-content {
-        flex-direction: column;
-        padding: 100px 20px;
-        text-align: center;
-    }
 
-    .hero-text, .about-text {
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
 
-    .hero-image, .about-image {
-        max-width: 80%;
-    }
 
-    .services {
-        padding: 80px 20px;
-    }
 
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .footer {
-        padding: 60px 20px 30px;
-    }
 
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .footer-section {
-        max-width: 100%;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .projects {
-        padding: 80px 20px;
-    }
-
-    .project-card {
-        flex: 0 0 80%;
-    }
-
-    .slider-prev {
-        left: 10px;
-    }
-
-    .slider-next {
-        right: 10px;
-    }
-
-    .testimonials {
-        padding: 80px 20px;
-    }
-
-    .testimonial-card {
-        flex: 0 0 80%;
-    }
-
-    .typewriter {
-        font-size: 18px;
-    }
-
-    .about {
-        padding: 80px 20px;
-    }
-
-    .signature-block {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .btn.btn-secondary {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .slide-indicator {
-        width: 30px;
-    }
-} */
+/* Projects folder style   */

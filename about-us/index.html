@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+       
+    </style>
+</head>
+
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span>Tech</span>Trend
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="#">About Us</a>
+            <a href="../services/">Services</a>
+            <a href="../projects/">Projects</a>
+            <a href="../contact-us/">Contact Us</a>
+            <a href="../contact-us/" class="quote-btn">Request a Quote</a>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            // Toggle nav-links and hamburger animation on click
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+
+            // Scroll behavior
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    navbar.classList.add('hidden');
+                    if (navLinks.classList.contains('show')) {
+                        navLinks.classList.remove('show');
+                        hamburger.classList.remove('active');
+                    }
+                } else {
+                    // Scrolling up
+                    navbar.classList.remove('hidden');
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+
+            // Hamburger animation
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                if (hamburger.classList.contains('active')) {
+                    hamburger.style.transform = 'rotate(90deg)';
+                    hamburger.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    hamburger.children[1].style.opacity = '0';
+                    hamburger.children[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+                } else {
+                    hamburger.style.transform = 'rotate(0)';
+                    hamburger.children[0].style.transform = 'rotate(0)';
+                    hamburger.children[1].style.opacity = '1';
+                    hamburger.children[2].style.transform = 'rotate(0)';
+                }
+            });
+        });
+    </script>
+    <br><br><br><br>
+
+
+<!-- body sectionn  -->
+
+<section class="about-us">
+    <div class="about-content">
+        <div class="about-text">
+            <span class="heading-subtitle">Who We Are</span>
+            <h2 class="heading-title">Innovating the Future with TechTrend</h2>
+            <div class="about-block">
+                <p class="paragraph">At TechTrend, we are a team of passionate innovators dedicated to transforming ideas into impactful solutions. With over a decade of experience, we specialize in delivering cutting-edge technology services that empower businesses to thrive in a digital world.</p>
+                <p class="paragraph">Our mission is to bridge the gap between technology and business needs, ensuring seamless integration and unparalleled results. From web development to cloud solutions, we’re here to drive your success.</p>
+            </div>
+            <div class="signature-block">
+                <a href="#" class="btn btn-secondary">Discover More <i class="fas fa-arrow-right"></i></a>
+                <div class="signature-body">
+                    <h6>John Doe</h6>
+                    <p>Founder & CEO</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-image">
+            <div class="about-img-holder">
+                <img src="../images/test.jpeg" alt="Our Team">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-section">
+    <div class="services-container">
+        <div class="service-card">
+            <i class="fas fa-laptop-code service-icon"></i>
+            <h3>Web Application Development</h3>
+            <p>We build scalable, secure, and user-friendly applications tailored to your business needs.</p>
+            <a href="#" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-cloud service-icon"></i>
+            <h3>Outlook & Microsoft M365 Setup</h3>
+            <p>Seamless setup and integration of Outlook and Microsoft 365 for efficient business communication.</p>
+            <a href="#" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-server service-icon"></i>
+            <h3>Domain & Hosting Services</h3>
+            <p>Reliable domain registration and hosting solutions for secure and high-performance websites.</p>
+            <a href="#" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-cogs service-icon"></i>
+            <h3>Maintenance & Support Services</h3>
+            <p>Ensure optimal performance with maintenance, troubleshooting, and enhancements.</p>
+            <a href="#" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- marketing teams  -->
+<!-- <section class="marketing-team">
+    <h2>Our Marketing Team</h2>
+    <div class="team-container">
+        <div class="team-card">
+            <img src="./images/team1.jpg" alt="Jane Doe">
+            <h3>Jane Doe</h3>
+            <p>Marketing Director</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="./images/team2.jpg" alt="John Smith">
+            <h3>John Smith</h3>
+            <p>Content Strategist</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="./images/team3.jpg" alt="Emily Johnson">
+            <h3>Emily Johnson</h3>
+            <p>Social Media Manager</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<!-- faq section  -->
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question">What services does TechTrend offer?</button>
+            <div class="faq-answer">
+                <p>TechTrend offers a wide range of services including web application development, cloud solutions, domain and hosting services, and maintenance & support.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How can I get started with your services?</button>
+            <div class="faq-answer">
+                <p>To get started, simply contact us through our website or email us at info@techtrend.com. Our team will guide you through the process.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What makes TechTrend different?</button>
+            <div class="faq-answer">
+                <p>We stand out with our decade-long experience, personalized solutions, and a commitment to driving business success through innovative technology.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            faqItem.classList.toggle('active');
+        });
+    });
+});
+</script>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TechTrend</h3>
+                <p>Innovating the future, one solution at a time.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a><br>
+                <a href="#about">About Us</a><br>
+                <a href="#services">Services</a><br>
+                <a href="#projects">Projects</a><br>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@techtrend.com">info@techtrend.com</a></p>
+                <p>Phone: <a href="tel:+11234567890">+1 (123) 456-7890</a></p>
+                <p>Address: 123 Innovation Drive, Tech City</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 TechTrend. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Corporate Landing Page</title>
+    <title>TECH</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -20,68 +22,68 @@
         </div>
         <div class="nav-links">
             <a href="#home">Home</a>
-            <a href="#about">About Us</a>
+            <a href="./about-us/">About Us</a>
             <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
+            <a href="./projects/">Projects</a>
             <a href="#contact">Contact Us</a>
             <a href="#quote" class="quote-btn">Request a Quote</a>
         </div>
     </nav>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
 
-    // Toggle nav-links and hamburger animation on click
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+            // Toggle nav-links and hamburger animation on click
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
 
-    // Close mobile menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+            // Close mobile menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+
+            // Scroll behavior
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    navbar.classList.add('hidden');
+                    if (navLinks.classList.contains('show')) {
+                        navLinks.classList.remove('show');
+                        hamburger.classList.remove('active');
+                    }
+                } else {
+                    // Scrolling up
+                    navbar.classList.remove('hidden');
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+
+            // Hamburger animation
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                if (hamburger.classList.contains('active')) {
+                    hamburger.style.transform = 'rotate(90deg)';
+                    hamburger.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    hamburger.children[1].style.opacity = '0';
+                    hamburger.children[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+                } else {
+                    hamburger.style.transform = 'rotate(0)';
+                    hamburger.children[0].style.transform = 'rotate(0)';
+                    hamburger.children[1].style.opacity = '1';
+                    hamburger.children[2].style.transform = 'rotate(0)';
+                }
+            });
         });
-    });
-    
-
-    // Scroll behavior
-    window.addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            navbar.classList.add('hidden');
-            if (navLinks.classList.contains('show')) {
-                navLinks.classList.remove('show');
-                hamburger.classList.remove('active');
-            }
-        } else {
-            // Scrolling up
-            navbar.classList.remove('hidden');
-        }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-
-    // Hamburger animation
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        if (hamburger.classList.contains('active')) {
-            hamburger.style.transform = 'rotate(90deg)';
-            hamburger.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            hamburger.children[1].style.opacity = '0';
-            hamburger.children[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-        } else {
-            hamburger.style.transform = 'rotate(0)';
-            hamburger.children[0].style.transform = 'rotate(0)';
-            hamburger.children[1].style.opacity = '1';
-            hamburger.children[2].style.transform = 'rotate(0)';
-        }
-    });
-});
     </script>
 
 
@@ -97,49 +99,49 @@
     </section>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    const typewriterText = document.querySelector('.typewriter-text');
-    const services = [
-        'Web Application Development',
-        'Microsoft 365 Setup',
-        'Domain & Hosting Services',
-        'Maintenance & Support'
-    ];
-    let serviceIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let currentText = '';
+            const typewriterText = document.querySelector('.typewriter-text');
+            const services = [
+                'Web Application Development',
+                'Microsoft 365 Setup',
+                'Domain & Hosting Services',
+                'Maintenance & Support'
+            ];
+            let serviceIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let currentText = '';
 
-    function type() {
-        const currentService = services[serviceIndex];
-        
-        if (!isDeleting) {
-            // Typing
-            currentText = currentService.substring(0, charIndex + 1);
-            charIndex++;
-        } else {
-            // Deleting
-            currentText = currentService.substring(0, charIndex);
-            charIndex--;
-        }
+            function type() {
+                const currentService = services[serviceIndex];
 
-        typewriterText.textContent = currentText;
+                if (!isDeleting) {
+                    // Typing
+                    currentText = currentService.substring(0, charIndex + 1);
+                    charIndex++;
+                } else {
+                    // Deleting
+                    currentText = currentService.substring(0, charIndex);
+                    charIndex--;
+                }
 
-        if (!isDeleting && charIndex === currentService.length) {
-            // Pause at end of typing
-            setTimeout(() => { isDeleting = true; }, 1000);
-        } else if (isDeleting && charIndex === 0) {
-            // Move to next service
-            isDeleting = false;
-            serviceIndex = (serviceIndex + 1) % services.length;
-        }
+                typewriterText.textContent = currentText;
 
-        const typingSpeed = isDeleting ? 70 : 100;
-        setTimeout(type, typingSpeed);
-    }
+                if (!isDeleting && charIndex === currentService.length) {
+                    // Pause at end of typing
+                    setTimeout(() => { isDeleting = true; }, 1000);
+                } else if (isDeleting && charIndex === 0) {
+                    // Move to next service
+                    isDeleting = false;
+                    serviceIndex = (serviceIndex + 1) % services.length;
+                }
 
-    // Start typewriter effect
-    setTimeout(type, 500);
-});
+                const typingSpeed = isDeleting ? 70 : 100;
+                setTimeout(type, typingSpeed);
+            }
+
+            // Start typewriter effect
+            setTimeout(type, 500);
+        });
     </script>
 
 
@@ -151,12 +153,16 @@
                 <p class="heading-subtitle">Innovative IT & Web Development Solutions</p>
                 <h2 class="heading-title">Empowering Businesses with Cutting-Edge Technology</h2>
                 <div class="about-block">
-                    <p class="paragraph">In today’s fast-evolving digital landscape, businesses need robust and scalable IT solutions to stay competitive. Our expertise in custom software, web development, and cloud solutions ensures seamless digital transformation.</p>
-                    <p class="paragraph">We specialize in developing high-performance web applications, enterprise solutions, and AI-driven automation to enhance efficiency and drive business growth. How can we help your business thrive in the digital era?</p>
+                    <p class="paragraph">In today’s fast-evolving digital landscape, businesses need robust and scalable
+                        IT solutions to stay competitive. Our expertise in custom software, web development, and cloud
+                        solutions ensures seamless digital transformation.</p>
+                    <p class="paragraph">We specialize in developing high-performance web applications, enterprise
+                        solutions, and AI-driven automation to enhance efficiency and drive business growth. How can we
+                        help your business thrive in the digital era?</p>
                     <div class="signature-block">
-                        <a class="btn btn-secondary" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a class="btn btn-secondary" href="./about-us/">Read More <i class="fas fa-arrow-right"></i></a>
                         <div class="signature-body">
-                            <h6>Muadh Ali</h6>
+                            <h6>Khalid Ali</h6>
                             <p>Co-Founder</p>
                             <img class="signature-img" src="./images/signature.png" alt="Signature">
                         </div>
@@ -179,7 +185,8 @@
             <div class="service-card">
                 <img src="./images/service-icon1.svg" alt="Web Development Icon" class="service-icon">
                 <h3>Web Application Development</h3>
-                <p>We craft scalable, secure, and user-friendly web applications tailored to your business needs. Our solutions leverage the latest technologies to ensure performance and reliability.</p>
+                <p>We craft scalable, secure, and user-friendly web applications tailored to your business needs. Our
+                    solutions leverage the latest technologies to ensure performance and reliability.</p>
                 <ul>
                     <li>Custom Web Solutions</li>
                     <li>Responsive Design</li>
@@ -189,19 +196,21 @@
             </div>
             <div class="service-card">
                 <img src="./images/service-icon2.svg" alt="M365 Setup Icon" class="service-icon">
-                <h3>Outlook & Microsoft M365 Setup</h3>
-                <p>Seamless setup and integration of Outlook and Microsoft 365 for efficient business communication. We optimize your workflow with professional configurations.</p>
+                <h3>Email (Outlook) and Services</h3>
+                <p>Seamless setup and integration of Outlook and Microsoft 365 for efficient business communication. We
+                    optimize your workflow with professional configurations.</p>
                 <ul>
                     <li>Email Setup</li>
                     <li>Cloud Integration</li>
-                    <li>Training Support</li>
+                    <li>Oulook Setup</li>
                 </ul>
                 <a href="#">Explore More</a>
             </div>
             <div class="service-card">
                 <img src="./images/service-icon3.svg" alt="Domain Hosting Icon" class="service-icon">
                 <h3>Domain & Hosting Services</h3>
-                <p>Reliable domain registration and hosting solutions for secure, high-performance websites. We ensure uptime and robust security for your online presence.</p>
+                <p>Reliable domain registration and hosting solutions for secure, high-performance websites. We ensure
+                    uptime and robust security for your online presence.</p>
                 <ul>
                     <li>Domain Management</li>
                     <li>High-Speed Hosting</li>
@@ -212,7 +221,8 @@
             <div class="service-card">
                 <img src="./images/service-icon4.svg" alt="Maintenance Icon" class="service-icon">
                 <h3>Maintenance & Support Services</h3>
-                <p>Ensure optimal performance with our maintenance, troubleshooting, and enhancement services. We keep your systems running smoothly with proactive support.</p>
+                <p>Ensure optimal performance with our maintenance, troubleshooting, and enhancement services. We keep
+                    your systems running smoothly with proactive support.</p>
                 <ul>
                     <li>24/7 Support</li>
                     <li>Regular Updates</li>
@@ -221,9 +231,9 @@
                 <a href="#">Explore More</a>
             </div>
             <div class="service-card">
-                <img src="./images/service-icon4.svg" alt="Maintenance Icon" class="service-icon">
-                <h3>Maintenance & Support Services</h3>
-                <p>Ensure optimal performance with our maintenance, troubleshooting, and enhancement services. We keep your systems running smoothly with proactive support.</p>
+                <img src="./images/service-icon5.svg" alt="Maintenance Icon" class="service-icon">
+                <h3>Development of Intranet Portal in sharepoint</h3>
+                <p>We design and develop customized SharePoint-based Intranet Portals to enhance internal communication, collaboration, and document management within your organization.</p>
                 <ul>
                     <li>24/7 Support</li>
                     <li>Regular Updates</li>
@@ -232,9 +242,9 @@
                 <a href="#">Explore More</a>
             </div>
             <div class="service-card">
-                <img src="./images/service-icon4.svg" alt="Maintenance Icon" class="service-icon">
-                <h3>Maintenance & Support Services</h3>
-                <p>Ensure optimal performance with our maintenance, troubleshooting, and enhancement services. We keep your systems running smoothly with proactive support.</p>
+                <img src="./images/service-icon6.svg" alt="Maintenance Icon" class="service-icon">
+                <h3>IT Technical support</h3>
+                <p>We provide reliable IT Technical Support services to ensure seamless operation, troubleshooting, and maintenance of your organization's technology infrastructure.</p>
                 <ul>
                     <li>24/7 Support</li>
                     <li>Regular Updates</li>
@@ -252,29 +262,36 @@
         <div class="testimonials-container">
             <div class="testimonials-slider">
                 <div class="testimonial-card">
-                    <img src="./images/client1.jpeg" alt="Client 1" class="client-image">
-                    <p>"TechTrend transformed our business with a custom web application that exceeded our expectations. Their expertise and dedication are unmatched."</p>
-                    <h3>Jane Doe</h3>
-                    <span>CEO, Innovate Corp</span>
+                    <img src="./images/client.png" alt="Client 1" class="client-image">
+                    <p>"Professional, reliable, and incredibly knowledgeable—our e-learning platform now runs smoother than ever thanks to their expertise"</p>
+                    <h3>Sameer</h3>
+                    <span>GDEduTech</span>
                 </div>
                 <div class="testimonial-card">
-                    <img src="./images/client2.jpeg" alt="Client 2" class="client-image">
-                    <p>"The Microsoft 365 setup by TechTrend streamlined our communication. Their support team is always responsive and professional."</p>
-                    <h3>John Smith</h3>
-                    <span>CTO, FutureTech</span>
+                    <img src="./images/client.png" alt="Client 2" class="client-image">
+                    <p>"The e-commerce features and design were beyond our expectations. Secure, elegant, and easy to manage."</p>
+                    <h3>Abdul Basith</h3>
+                    <span>GD Gold and Diamonds</span>
                 </div>
                 <div class="testimonial-card">
-                    <img src="./images/client3.jpeg" alt="Client 3" class="client-image">
-                    <p>"Reliable hosting and domain services from TechTrend ensured our website runs smoothly. Highly recommend their services!"</p>
-                    <h3>Emily Brown</h3>
-                    <span>Founder, GrowEasy</span>
+                    <img src="./images/client.png" alt="Client 3" class="client-image">
+                    <p>"They helped us set up Microsoft 365 and streamline our internal workflows—game changer for productivity!"</p>
+                    <h3>Abubakar Aidarus</h3>
+                    <span>Marasi Alimdad</span>
                 </div>
                 <div class="testimonial-card">
-                    <img src="./images/client4.jpeg" alt="Client 4" class="client-image">
-                    <p>"TechTrend's maintenance services keep our systems optimized. Their proactive approach saves us time and resources."</p>
-                    <h3>Michael Lee</h3>
-                    <span>Director, TechSolutions</span>
+                    <img src="./images/client.png" alt="Client 4" class="client-image">
+                    <p>"Our website now perfectly reflects our global logistics capabilities. Clean design, fast loading, and mobile-friendly—exactly what we needed!"</p>
+                    <h3>Ajwad Ahmed</h3>
+                    <span>Orbitus Shipping</span>
                 </div>
+                <div class="testimonial-card">
+                    <img src="./images/client.png" alt="Client 5" class="client-image">
+                    <p>"They understood our vision from day one and delivered a professional website that’s both functional and visually appealing."</p>
+                    <h3>Junaid</h3>
+                    <span>MHS GPR</span>
+                </div>
+                
             </div>
             <button class="slider-prev">❮</button>
             <button class="slider-next">❯</button>
@@ -282,86 +299,86 @@
     </section>
 
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.testimonials-slider');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.querySelector('.slider-prev');
-    const nextBtn = document.querySelector('.slider-next');
-    let currentIndex = 0;
-    const cardWidth = cards[0].offsetWidth + 30; // Include margin
-    const totalCards = cards.length;
-    const visibleCards = 3; // Number of cards visible at once
-    const maxIndex = totalCards - visibleCards;
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.testimonials-slider');
+            const cards = document.querySelectorAll('.testimonial-card');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            let currentIndex = 0;
+            const cardWidth = cards[0].offsetWidth + 30; // Include margin
+            const totalCards = cards.length;
+            const visibleCards = 3; // Number of cards visible at once
+            const maxIndex = totalCards - visibleCards;
 
-    // Clone first and last cards for infinite loop effect
-    const firstClone = cards[0].cloneNode(true);
-    const lastClone = cards[totalCards - 1].cloneNode(true);
-    slider.appendChild(firstClone);
-    slider.insertBefore(lastClone, cards[0]);
+            // Clone first and last cards for infinite loop effect
+            const firstClone = cards[0].cloneNode(true);
+            const lastClone = cards[totalCards - 1].cloneNode(true);
+            slider.appendChild(firstClone);
+            slider.insertBefore(lastClone, cards[0]);
 
-    // Update slider position
-    const updateSlider = () => {
-        slider.style.transition = 'transform 0.5s ease-in-out';
-        slider.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
-    };
+            // Update slider position
+            const updateSlider = () => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+                slider.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
+            };
 
-    // Move to next slide
-    const moveNext = () => {
-        if (currentIndex >= maxIndex) {
-            currentIndex = 0;
-            slider.style.transition = 'none';
+            // Move to next slide
+            const moveNext = () => {
+                if (currentIndex >= maxIndex) {
+                    currentIndex = 0;
+                    slider.style.transition = 'none';
+                    slider.style.transform = `translateX(-${cardWidth}px)`;
+                    setTimeout(() => {
+                        slider.style.transition = 'transform 0.5s ease-in-out';
+                        updateSlider();
+                    }, 50);
+                } else {
+                    currentIndex++;
+                    updateSlider();
+                }
+            };
+
+            // Move to previous slide
+            const movePrev = () => {
+                if (currentIndex <= 0) {
+                    currentIndex = maxIndex;
+                    slider.style.transition = 'none';
+                    slider.style.transform = `translateX(-${(maxIndex + 1) * cardWidth}px)`;
+                    setTimeout(() => {
+                        slider.style.transition = 'transform 0.5s ease-in-out';
+                        updateSlider();
+                    }, 50);
+                } else {
+                    currentIndex--;
+                    updateSlider();
+                }
+            };
+
+            // Auto-slide every 5 seconds
+            let autoSlide = setInterval(moveNext, 5000);
+
+            // Pause on hover
+            slider.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlide));
+            slider.parentElement.addEventListener('mouseleave', () => autoSlide = setInterval(moveNext, 5000));
+
+            // Button controls
+            nextBtn.addEventListener('click', () => {
+                clearInterval(autoSlide);
+                moveNext();
+                autoSlide = setInterval(moveNext, 5000);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                clearInterval(autoSlide);
+                movePrev();
+                autoSlide = setInterval(moveNext, 5000);
+            });
+
+            // Initial position
             slider.style.transform = `translateX(-${cardWidth}px)`;
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease-in-out';
-                updateSlider();
-            }, 50);
-        } else {
-            currentIndex++;
-            updateSlider();
-        }
-    };
-
-    // Move to previous slide
-    const movePrev = () => {
-        if (currentIndex <= 0) {
-            currentIndex = maxIndex;
-            slider.style.transition = 'none';
-            slider.style.transform = `translateX(-${(maxIndex + 1) * cardWidth}px)`;
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease-in-out';
-                updateSlider();
-            }, 50);
-        } else {
-            currentIndex--;
-            updateSlider();
-        }
-    };
-
-    // Auto-slide every 5 seconds
-    let autoSlide = setInterval(moveNext, 5000);
-
-    // Pause on hover
-    slider.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlide));
-    slider.parentElement.addEventListener('mouseleave', () => autoSlide = setInterval(moveNext, 5000));
-
-    // Button controls
-    nextBtn.addEventListener('click', () => {
-        clearInterval(autoSlide);
-        moveNext();
-        autoSlide = setInterval(moveNext, 5000);
-    });
-
-    prevBtn.addEventListener('click', () => {
-        clearInterval(autoSlide);
-        movePrev();
-        autoSlide = setInterval(moveNext, 5000);
-    });
-
-    // Initial position
-    slider.style.transform = `translateX(-${cardWidth}px)`;
-});
-</script>
+        });
+    </script>
 
 
 
@@ -373,127 +390,129 @@
         <div class="projects-container">
             <div class="projects-slider">
                 <div class="project-card">
-                    <img src="./images/1.png" alt="Wafa Enterprises">
-                    <h3>Wafa Enterprises</h3>
-                    <p>Experience a smarter way to save with us. Trusted by over 30,000 customers, your monthly contributions do more than build financial security - they open doors to extraordinary benefits.</p>
-                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                    <img src="./images/1.png" alt="PACE Conclave">
+                    <h3>PACE Conclave</h3>
+                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia,
+                        industry, and research per-sonnel through a series of events.
+                    </p>
+                    <a href="./projects/" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="project-card">
                     <img src="./images/2.jpg" alt="GD Gold And Diamond">
-                    <h3>GD Gold And Diamond</h3>
-                    <p>At GD GOLD AND DIAMONDS, we're dedicated to providing a trusted, high-quality experience for our clients. With ethically sourced, rigorously inspected gold, we ensure each piece meets the highest standards.</p>
-                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                    <h3>GD Edu Tech</h3>
+                    <p>Access world-class education from anywhere. Learn at your own pace with expert-led courses.</p>
+                    <a href="./projects/" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="project-card">
-                    <img src="./images/3.jpg" alt="PACE Conclave">
-                    <h3>PACE Conclave</h3>
-                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia, industry, and research per-sonnel through a series of events.</p>
-                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                    <img src="./images/3.jpg" alt="Orbitus Shipping Corporation">
+                    <h3>Orbitus Shipping Corporation</h3>
+                    <p>At Orbitus Shipping Corporation, we specialize in delivering seamless, reliable and efficient freight forwarding solutions tailored to your unique needs. </p>
+                    <a href="./projects/" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="project-card">
-                    <img src="./images/4.jpg" alt="PACE Conclave">
-                    <h3>PACE Conclave</h3>
-                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia, industry, and research per-sonnel through a series of events.</p>
-                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                    <img src="./images/4.jpg" alt="AEB Saudi">
+                    <h3>AEB Saudi</h3>
+                    <p>AEB takes pride in introducing itself as an efficient provider of Human Resource and Equipments for industries & General Contracting Establishment in Kingdom of Saudi Arabia.</p>
+                    <a href="./projects/" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="project-card">
-                    <img src="./images/5.jpg" alt="PACE Conclave">
-                    <h3>PACE Conclave</h3>
-                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia, industry, and research per-sonnel through a series of events.</p>
-                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                    <img src="./images/5.jpg" alt="Wafa Enterprises">
+                    <h3>Wafa Enterprises</h3>
+                    <p>At Wafa Enterprises, Experience a smarter way to save with us. Trusted by over 30,000 customers, your monthly contributions do more than build financial security - they open doors to extraordinary benefits.</p>
+                    <a href="./projects/" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="project-card">
-                    <img src="./images/6.jpg" alt="PACE Conclave">
-                    <h3>PACE Conclave</h3>
-                    <p>PACE Conclave is an initiative by P.A College of Engineering, aiming to bring together academia, industry, and research per-sonnel through a series of events.</p>
-                    <a href="#" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
+                    <img src="./images/6.jpg" alt="GD gold and Diamond">
+                    <h3>GD gold and Diamond</h3>
+                    <p>At GD GOLD AND DIAMONDS, we’re dedicated to providing a trusted, high-quality experience for our clients. With ethically sourced, rigorously inspected gold, we ensure each piece meets the highest standards.</p>
+                    <a href="./projects/" class="view-btn">View Here <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </div>           
+            </div>
         </div>
     </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.projects-slider');
-    const cards = document.querySelectorAll('.project-card');
-    const prevBtn = document.querySelector('.slider-prev');
-    const nextBtn = document.querySelector('.slider-next');
-    let currentIndex = 0;
-    const cardWidth = cards[0].offsetWidth + 30; // Include margin
-    const totalCards = cards.length;
-    const visibleCards = 3; // Number of cards visible at once
-    const maxIndex = totalCards - visibleCards;
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.projects-slider');
+            const cards = document.querySelectorAll('.project-card');
+            const prevBtn = document.querySelector('.slider-prev');
+            const nextBtn = document.querySelector('.slider-next');
+            let currentIndex = 0;
+            const cardWidth = cards[0].offsetWidth + 30; // Include margin
+            const totalCards = cards.length;
+            const visibleCards = 3; // Number of cards visible at once
+            const maxIndex = totalCards - visibleCards;
 
-    // Clone first and last cards for infinite loop effect
-    const firstClone = cards[0].cloneNode(true);
-    const lastClone = cards[totalCards - 1].cloneNode(true);
-    slider.appendChild(firstClone);
-    slider.insertBefore(lastClone, cards[0]);
+            // Clone first and last cards for infinite loop effect
+            const firstClone = cards[0].cloneNode(true);
+            const lastClone = cards[totalCards - 1].cloneNode(true);
+            slider.appendChild(firstClone);
+            slider.insertBefore(lastClone, cards[0]);
 
-    // Update slider position
-    const updateSlider = () => {
-        slider.style.transition = 'transform 0.5s ease-in-out';
-        slider.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
-    };
+            // Update slider position
+            const updateSlider = () => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+                slider.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
+            };
 
-    // Move to next slide
-    const moveNext = () => {
-        if (currentIndex >= maxIndex) {
-            currentIndex = 0;
-            slider.style.transition = 'none';
+            // Move to next slide
+            const moveNext = () => {
+                if (currentIndex >= maxIndex) {
+                    currentIndex = 0;
+                    slider.style.transition = 'none';
+                    slider.style.transform = `translateX(-${cardWidth}px)`;
+                    setTimeout(() => {
+                        slider.style.transition = 'transform 0.5s ease-in-out';
+                        updateSlider();
+                    }, 50);
+                } else {
+                    currentIndex++;
+                    updateSlider();
+                }
+            };
+
+            // Move to previous slide
+            const movePrev = () => {
+                if (currentIndex <= 0) {
+                    currentIndex = maxIndex;
+                    slider.style.transition = 'none';
+                    slider.style.transform = `translateX(-${(maxIndex + 1) * cardWidth}px)`;
+                    setTimeout(() => {
+                        slider.style.transition = 'transform 0.5s ease-in-out';
+                        updateSlider();
+                    }, 50);
+                } else {
+                    currentIndex--;
+                    updateSlider();
+                }
+            };
+
+            // Auto-slide every 5 seconds
+            let autoSlide = setInterval(moveNext, 1000);
+
+            // Pause on hover
+            slider.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlide));
+            slider.parentElement.addEventListener('mouseleave', () => autoSlide = setInterval(moveNext, 1000));
+
+            // Button controls
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    clearInterval(autoSlide);
+                    movePrev();
+                    autoSlide = setInterval(moveNext, 1000);
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    clearInterval(autoSlide);
+                    moveNext();
+                    autoSlide = setInterval(moveNext, 1000);
+                });
+            }
+
+            // Initial position
             slider.style.transform = `translateX(-${cardWidth}px)`;
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease-in-out';
-                updateSlider();
-            }, 50);
-        } else {
-            currentIndex++;
-            updateSlider();
-        }
-    };
-
-    // Move to previous slide
-    const movePrev = () => {
-        if (currentIndex <= 0) {
-            currentIndex = maxIndex;
-            slider.style.transition = 'none';
-            slider.style.transform = `translateX(-${(maxIndex + 1) * cardWidth}px)`;
-            setTimeout(() => {
-                slider.style.transition = 'transform 0.5s ease-in-out';
-                updateSlider();
-            }, 50);
-        } else {
-            currentIndex--;
-            updateSlider();
-        }
-    };
-
-    // Auto-slide every 5 seconds
-    let autoSlide = setInterval(moveNext, 1000);
-
-    // Pause on hover
-    slider.parentElement.addEventListener('mouseenter', () => clearInterval(autoSlide));
-    slider.parentElement.addEventListener('mouseleave', () => autoSlide = setInterval(moveNext, 1000));
-
-    // Button controls
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-            clearInterval(autoSlide);
-            movePrev();
-            autoSlide = setInterval(moveNext, 1000);
         });
-
-        nextBtn.addEventListener('click', () => {
-            clearInterval(autoSlide);
-            moveNext();
-            autoSlide = setInterval(moveNext, 1000);
-        });
-    }
-
-    // Initial position
-    slider.style.transform = `translateX(-${cardWidth}px)`;
-});
-</script>
+    </script>
 
 
 
@@ -508,16 +527,16 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="#home">Home</a><br>
-                <a href="#about">About Us</a><br>
-                <a href="#services">Services</a><br>
-                <a href="#projects">Projects</a><br>
-                <a href="#contact">Contact Us</a>
+                <a href="./about-us/">About Us</a><br>
+                <a href="./services/">Services</a><br>
+                <a href="./projects/">Projects</a><br>
+                <a href="./contact-us/">Contact Us</a>
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <p>Email: <a href="mailto:info@techtrend.com">info@techtrend.com</a></p>
                 <p>Phone: <a href="tel:+11234567890">+1 (123) 456-7890</a></p>
-                <p>Address: 123 Innovation Drive, Tech City</p>
+                <p>Address: Mangalore, Karnataka India</p>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
@@ -537,4 +556,5 @@
         </div>
     </footer>
 </body>
+
 </html>
