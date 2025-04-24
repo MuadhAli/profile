@@ -572,3 +572,347 @@
     }
 }
 
+
+
+
+/* timeline design  */
+.services-timeline {
+    padding: 80px 80px;
+    position: relative;
+    background: transparent;
+    display: flex;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.services-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.timeline-line {
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #031C52, #a0a0ff);
+    position: absolute;
+    left: 100px;
+    top: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(160, 160, 255, 0.5);
+    animation: growLine 1.5s ease-out forwards;
+}
+
+.services-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 160px;
+    width: 100%;
+}
+
+.service-item {
+    position: relative;
+    animation: fadeInUp 1.2s ease-out;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.service-item:nth-child(1) { --i: 1; }
+.service-item:nth-child(2) { --i: 2; }
+.service-item:nth-child(3) { --i: 3; }
+.service-item:nth-child(4) { --i: 4; }
+.service-item:nth-child(5) { --i: 5; }
+.service-item:nth-child(6) { --i: 6; }
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    width: 60px;
+    height: 2px;
+    background: #a0a0ff;
+    transform: translateY(-50%);
+    transition: width 0.3s ease;
+}
+
+.service-item:hover::before {
+    width: 70px;
+}
+
+.service-card {
+    background: linear-gradient(145deg, #031C52, rgba(15, 15, 15, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 35px rgba(160, 160, 255, 0.5);
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-card:hover::after {
+    left: 100%;
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.service-icon {
+    font-size: 32px;
+    color: #a0a0ff;
+    margin-right: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.15);
+    color: #ffffff;
+}
+
+.service-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(160, 160, 255, 0.5);
+}
+
+.service-content {
+    color: #d0d0d0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.service-content p {
+    margin-bottom: 15px;
+}
+
+.service-content ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.service-content ul li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.service-content ul li:before {
+    content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #a0a0ff;
+    position: absolute;
+    left: -20px;
+    top: 0;
+}
+
+.explore-btn {
+    background: #a0a0ff;
+    color: #031C52;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-btn i {
+    margin-left: 8px;
+}
+
+.explore-btn:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(160, 160, 255, 0.6);
+}
+
+@keyframes growLine {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .services-timeline {
+        padding: 70px 60px;
+    }
+
+    .timeline-line {
+        left: 80px;
+    }
+
+    .services-wrapper {
+        margin-left: 140px;
+    }
+
+    .service-card {
+        width: 350px;
+        padding: 25px;
+    }
+
+    .service-header h3 {
+        font-size: 22px;
+    }
+
+    .service-content {
+        font-size: 15px;
+    }
+
+    .explore-btn {
+        padding: 9px 18px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-timeline {
+        padding: 60px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-line {
+        width: 100%;
+        height: 6px;
+        left: 0;
+        top: 50px;
+        background: linear-gradient(to right, #031C52, #a0a0ff);
+        animation: growLineHorizontal 1.5s ease-out forwards;
+    }
+
+    @keyframes growLineHorizontal {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    .services-wrapper {
+        margin-left: 0;
+        margin-top: 80px;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 90%;
+    }
+
+    .service-item::before {
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 50px;
+        background: #a0a0ff;
+    }
+
+    .service-item:hover::before {
+        height: 60px;
+    }
+
+    .service-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .service-header h3 {
+        font-size: 20px;
+    }
+
+    .service-content {
+        font-size: 14px;
+    }
+
+    .explore-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-timeline {
+        padding: 50px 15px;
+    }
+
+    .timeline-line {
+        top: 40px;
+    }
+
+    .services-wrapper {
+        margin-top: 60px;
+    }
+
+    .service-item::before {
+        top: -40px;
+        height: 40px;
+    }
+
+    .service-item:hover::before {
+        height: 50px;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .service-header h3 {
+        font-size: 18px;
+    }
+
+    .service-content {
+        font-size: 13px;
+    }
+
+    .explore-btn {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+}
