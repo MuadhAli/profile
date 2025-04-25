@@ -62,12 +62,12 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#">Projects</a>
-            <a href="#contact">Contact Us</a>
-            <a href="#quote" class="quote-btn">Request a Quote</a>
+            <a href="../">Home</a>
+            <a href="../about-us/">About Us</a>
+            <a href="../services/">Services</a>
+            <a href="../projects/">Projects</a>
+            <a href="../contact-us/">Contact Us</a>
+            <a href="../contact-us/" class="quote-btn">Request a Quote</a>
         </div>
     </nav>
     <script>
@@ -130,9 +130,119 @@
 
     
 
-
-
-
+    <section class="contact-page">
+        <div class="contact-container">
+            <div class="contact-info">
+                <p class="info-desc">As a leading provider of IT services, we deliver fast and reliable solutions to meet your business needs, whether through web, cloud, or on-premise support.</p>
+                <a href="#" class="info-link">
+                    <i class="fas fa-globe"></i> Global Office Map
+                </a>
+                <div class="info-details">
+                    <p><i class="fas fa-phone-alt"></i> Emergency Line: +91 1234567890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: Bangalore, Karnataka, India</p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+                <a href="#" class="btn btn--secondary">Contact Us <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="contact-form">
+                <div class="contact-card">
+                    <div class="contact-body">
+                        <h5 class="card-heading">Request A Quote</h5>
+                        <p class="card-desc">We take great pride in everything that we do, control over products allows us to ensure our customers receive the best quality service.</p>
+                        <form class="contactForm" method="post" action="assets/php/contact.php">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="client-name">Your Name</label>
+                                    <input class="form-control" type="text" id="client-name" name="client-name" placeholder="Enter your name" required />
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="company-name">Company Name</label>
+                                    <input class="form-control" type="text" id="company-name" name="company-name" placeholder="Enter company name" required />
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="client-email">Email</label>
+                                    <input class="form-control" type="email" id="client-email" name="client-email" placeholder="Enter your email" required />
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="client-phone">Phone Number</label>
+                                    <input class="form-control" type="tel" id="client-phone" name="client-phone" placeholder="Enter your phone number" required />
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="select-1">Select Service Type</label>
+                                    <select class="form-control" id="select-1" name="service-type" required>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Desktop Application Development">Desktop Application Development</option>
+                                        <option value="Cloud Solutions">Cloud Solutions</option>
+                                        <option value="IT Consultation">IT Consultation</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="select-2">Project Completion Timeline</label>
+                                    <select class="form-control" id="select-2" name="timeline" required>
+                                        <option value="1-3 Months">1-3 Months</option>
+                                        <option value="3-6 Months">3-6 Months</option>
+                                        <option value="6-12 Months">6-12 Months</option>
+                                        <option value="Ongoing Maintenance">Ongoing Maintenance</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="contact-usage">Estimated Budget ($)</label>
+                                    <input class="form-control" type="text" id="contact-usage" name="budget" placeholder="Enter budget range" required />
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="select-3">Hosting Requirement</label>
+                                    <select class="form-control" id="select-3" name="hosting" required>
+                                        <option value="Domain & Hosting Needed">Domain & Hosting Needed</option>
+                                        <option value="Already Have Hosting">Already Have Hosting</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="select-4">Support & Maintenance</label>
+                                    <select class="form-control" id="select-4" name="support" required>
+                                        <option value="Yes, Required">Yes, Required</option>
+                                        <option value="No, One-Time Development">No, One-Time Development</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label class="form-label" for="select-5">Preferred Technology Stack</label>
+                                    <select class="form-control" id="select-5" name="tech-stack" required>
+                                        <option value="Not Sure, Need Consultation">Not Sure, Need Consultation</option>
+                                        <option value="MERN Stack">MERN Stack</option>
+                                        <option value="LAMP Stack">LAMP Stack</option>
+                                        <option value="Python/Django">Python/Django</option>
+                                        <option value=".NET Framework">.NET Framework</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Preferred Contact Method</label>
+                                    <div class="custom-radio-group" id="custom-radio-group">
+                                        <div class="custom-control">
+                                            <input class="custom-control-input" type="radio" id="customRadioInline1" name="contact-method" value="All" required />
+                                            <label for="customRadioInline1">All</label>
+                                        </div>
+                                        <div class="custom-control">
+                                            <input class="custom-control-input" type="radio" id="customRadioInline2" name="contact-method" value="Email" />
+                                            <label for="customRadioInline2">Email</label>
+                                        </div>
+                                        <div class="custom-control">
+                                            <input class="custom-control-input" type="radio" id="customRadioInline3" name="contact-method" value="Phone" />
+                                            <label for="customRadioInline3">Phone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn--secondary w-100">Submit Request <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                                <div class="col-12">
+                                    <div class="contact-result"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     
@@ -146,11 +256,11 @@
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <a href="#home">Home</a><br>
-                <a href="#about">About Us</a><br>
-                <a href="#services">Services</a><br>
-                <a href="#projects">Projects</a><br>
-                <a href="#contact">Contact Us</a>
+                <a href="../">Home</a><br>
+                <a href="../about-us/">About Us</a><br>
+                <a href="../services/">Services</a><br>
+                <a href="../projects/">Projects</a><br>
+                <a href="../contact-us/">Contact Us</a>
             </div>
             <div class="footer-section">
                 <h3>Contact Us</h3>
