@@ -65,8 +65,8 @@ body::before {
 }
 
 .logo {
-    font-size: 34px;
-    font-weight: 900;
+    font-size: 20px;
+    font-weight: 600;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 4px;
