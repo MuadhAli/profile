@@ -211,10 +211,10 @@
                             <div class="view" data-image="../images/secure6.png"></div>
                         </div>
                         <div class="tablet">
-                            <div class="view" data-image="../images/secure5.png"></div>
+                            <div class="view" data-image="../images/secure6.png"></div>
                         </div>
                         <div class="mobile">
-                            <div class="view" data-image="../images/secure5.png"></div>
+                            <div class="view" data-image="../images/secure6.png"></div>
                         </div>
                     </div>
                 </div>
@@ -241,7 +241,6 @@
                 nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>'
             });
 
-            // Set background images
             $('.view').each(function () {
                 $(this).css('background-image', 'url(' + $(this).data('image') + ')');
             });
@@ -329,7 +328,15 @@
             </div>
         </div>
     </section>
-
+    <script>
+        document.querySelectorAll('.view-btn').forEach(link => {
+            link.addEventListener('click', (event) => {
+                console.log('View button clicked:', link.href);
+                // Temporarily force navigation to confirm href works
+                window.location.href = link.href;
+            });
+        });
+    </script>
 
 
     <!-- Footer -->

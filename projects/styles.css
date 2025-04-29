@@ -852,6 +852,7 @@
     position: relative;
     margin: 0 auto;
     animation: fadeInUp 1.2s ease-out;
+    z-index: 1; /* Ensure card has a defined stacking context */
 }
 
 .project-card img {
@@ -859,11 +860,14 @@
     height: 200px;
     object-fit: cover;
     display: block;
+    z-index: 0; /* Place image below content */
 }
 
 .card-content {
     padding: 20px;
     text-align: center;
+    position: relative; /* Ensure content is in the stacking context */
+    z-index: 10; /* Place content above pseudo-elements */
 }
 
 .project-card h3 {
@@ -892,6 +896,9 @@
     display: inline-flex;
     align-items: center;
     transition: background 0.3s ease, transform 0.3s ease;
+    position: relative; /* Ensure button is in the stacking context */
+    z-index: 20; /* Place button above all other elements */
+    cursor: pointer; /* Explicitly set cursor */
 }
 
 .view-btn i {
@@ -919,6 +926,7 @@
     border-radius: 10px;
     transition: border-color 0.3s ease;
     box-sizing: border-box;
+    z-index: 5; /* Place below card content */
 }
 
 .project-card:hover::before {
@@ -935,6 +943,7 @@
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
+    z-index: 5; /* Place below card content */
 }
 
 .project-card:hover::after {
