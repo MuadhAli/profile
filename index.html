@@ -21,7 +21,7 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="#home">Home</a>
+            <a href="./">Home</a>
             <a href="./about-us/">About Us</a>
             <a href="./services/">Services</a>
             <a href="./projects/">Projects</a>
@@ -30,6 +30,8 @@
         </div>
     </nav>
     <script>
+        const navbar = document.querySelector('.navbar');
+        let lastScrollTop = 0;
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
@@ -192,7 +194,7 @@
                     <li>Responsive Design</li>
                     <li>Secure Architecture</li>
                 </ul>
-                <a href="#">Explore More</a>
+                <a href="./services/">Explore More</a>
             </div>
             <div class="service-card">
                 <img src="./images/service-icon2.svg" alt="M365 Setup Icon" class="service-icon">
@@ -204,7 +206,7 @@
                     <li>Cloud Integration</li>
                     <li>Oulook Setup</li>
                 </ul>
-                <a href="#">Explore More</a>
+                <a href="./services/">Explore More</a>
             </div>
             <div class="service-card">
                 <img src="./images/service-icon3.svg" alt="Domain Hosting Icon" class="service-icon">
@@ -216,7 +218,7 @@
                     <li>High-Speed Hosting</li>
                     <li>SSL Certificates</li>
                 </ul>
-                <a href="#">Explore More</a>
+                <a href="./services/">Explore More</a>
             </div>
             <div class="service-card">
                 <img src="./images/service-icon4.svg" alt="Maintenance Icon" class="service-icon">
@@ -228,7 +230,7 @@
                     <li>Regular Updates</li>
                     <li>Performance Optimization</li>
                 </ul>
-                <a href="#">Explore More</a>
+                <a href="./services/">Explore More</a>
             </div>
             <div class="service-card">
                 <img src="./images/service-icon5.svg" alt="Maintenance Icon" class="service-icon">
@@ -239,7 +241,7 @@
                     <li>Regular Updates</li>
                     <li>Performance Optimization</li>
                 </ul>
-                <a href="#">Explore More</a>
+                <a href="./services/">Explore More</a>
             </div>
             <div class="service-card">
                 <img src="./images/service-icon6.svg" alt="Maintenance Icon" class="service-icon">
@@ -250,7 +252,7 @@
                     <li>Regular Updates</li>
                     <li>Performance Optimization</li>
                 </ul>
-                <a href="#">Explore More</a>
+                <a href="./services/">Explore More</a>
             </div>
         </div>
     </section>
@@ -526,7 +528,7 @@
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <a href="#home">Home</a><br>
+                <a href="./">Home</a><br>
                 <a href="./about-us/">About Us</a><br>
                 <a href="./services/">Services</a><br>
                 <a href="./projects/">Projects</a><br>
@@ -556,5 +558,5 @@
         </div>
     </footer>
 </body>
-<script src="./script.js"></script>
+<!-- <script src="./script.js"></script> -->
 </html>

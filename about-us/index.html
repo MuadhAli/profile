@@ -28,8 +28,8 @@
             <span></span>
         </div>
         <div class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="#">About Us </a>
+            <a href="../">Home</a>
+            <a href="../about-us/">About Us </a>
             <a href="../services/">Services</a>
             <a href="../projects/">Projects</a>
             <a href="../contact-us/">Contact Us</a>
@@ -37,6 +37,8 @@
         </div>
     </nav>
     <script>
+        const navbar = document.querySelector('.navbar');
+        let lastScrollTop = 0;
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
@@ -110,7 +112,7 @@
                         we’re here to drive your success.</p>
                 </div>
                 <div class="signature-block">
-                    <a href="#" class="btn btn-secondary">Discover More <i class="fas fa-arrow-right"></i></a>
+                    <a href="../contact-us/" class="btn btn-secondary">Get in touch <i class="fas fa-arrow-right"></i></a>
                     <div class="signature-body">
                         <h6>Khan Ali</h6>
                         <p>Founder</p>
@@ -131,25 +133,25 @@
                 <i class="fas fa-laptop-code service-icon"></i>
                 <h3>Web Application Development</h3>
                 <p>We build scalable, secure, and user-friendly applications tailored to your business needs.</p>
-                <a href="../services/" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="../contact-us/" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="service-card">
                 <i class="fas fa-cloud service-icon"></i>
                 <h3>Outlook & Email Setup</h3>
                 <p>Seamless setup and integration of Outlook and Microsoft 365 for efficient business communication.</p>
-                <a href="../services/" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="../contact-us/" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="service-card">
                 <i class="fas fa-server service-icon"></i>
                 <h3>Domain & Hosting Services</h3>
                 <p>Reliable domain registration and hosting solutions for secure and high-performance websites.</p>
-                <a href="../services/" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="../contact-us/" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="service-card">
                 <i class="fas fa-cogs service-icon"></i>
                 <h3>Maintenance & Support Services</h3>
                 <p>Ensure optimal performance with maintenance, troubleshooting, and enhancements.</p>
-                <a href="../services/" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
+                <a href="../contact-us/" class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -241,7 +243,7 @@
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <a href="../index.html">Home</a><br>
+                <a href="../">Home</a><br>
                 <a href="../about-us/">About Us</a><br>
                 <a href="../services/">Services</a><br>
                 <a href="../projects/">Projects</a><br>
